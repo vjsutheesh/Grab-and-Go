@@ -4,7 +4,7 @@ import Grab from "./Grab.png";
 const Login = () => {
   const history = useHistory();
   const HandleSubmit = () => {
-    history.push("/");
+    history.push("/login");
   };
 
   return (
@@ -13,13 +13,17 @@ const Login = () => {
         <div className="navbar">
           <div className="left-side">Grab & Go</div>
           <div className="right-side">
-            <Link to="/login" className="login">
+            <Link to="/login" className="login" style={{ color: "white" }}>
               login
             </Link>
             <Link to="/" className="about">
               About Us
             </Link>
-            <Link to="/register" className="register">
+            <Link
+              to="/register"
+              className="register"
+              style={{ color: "lightgreen" }}
+            >
               Register
             </Link>
           </div>
@@ -37,6 +41,12 @@ const Login = () => {
                   placeholder="Username"
                   className="username"
                 />
+                <i className="fa fa-user icon"></i>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  className="username"
+                />
                 <i class="fa fa-key icon"></i>
                 <input
                   type="password"
@@ -48,11 +58,11 @@ const Login = () => {
                 Submit
               </button>
               <p className="account">
-                Don't have an account ?
+                Already have an account ?
                 <span>
                   {" "}
-                  <Link to="/register" className="new-register">
-                    Register
+                  <Link to="/login" className="new-register">
+                    Login
                   </Link>
                 </span>
               </p>

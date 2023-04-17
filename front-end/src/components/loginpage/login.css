@@ -1,0 +1,140 @@
+.container {
+  background-color: rgb(57, 51, 51);
+  background-image: url("restarant.jpg");
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  font-weight: bold;
+  /* justify-content: space-between; */
+}
+
+.left-side {
+  margin-right: 600px;
+}
+
+.right-side {
+  margin-top: 30px;
+  margin-left: 230px;
+  display: flex;
+  background-color: none;
+}
+
+.login,
+.register,
+.about {
+  margin-right: 60px;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  background-color: inherit;
+  font-size: 18px;
+  color: white;
+}
+
+.login {
+  color: lightgreen;
+}
+
+.login:hover,
+.register:hover,
+.about:hover {
+  color: white;
+  /* background-color: rgb(250, 248, 248); */
+  cursor: pointer;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  border-radius: 5px;
+  color: lightgreen;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 130px;
+}
+
+.body-container {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username,
+.password {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 40px;
+  padding-left: 35px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: lightgray;
+  border-radius: 50px;
+  outline: none;
+}
+
+.submit-btn {
+  width: 30%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50px;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: lightgray;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  color: lightgrey;
+  background-color: transparent;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 12px;
+  padding-left: 15px;
+  min-width: 40px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.account {
+  color: lightgreen;
+}
+
+.new-register {
+  color: white;
+  text-decoration: none;
+}
+
+.new-register:hover {
+  text-decoration: underline;
+}
