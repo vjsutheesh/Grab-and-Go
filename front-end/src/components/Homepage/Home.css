@@ -1,0 +1,34 @@
+.body-content{
+    width: inherit;
+    height: 600px;
+    padding: 0 30px;
+}
+.body-text{
+    /* height: 200px; */
+    padding: 0 30px;
+    color: aqua;
+    padding:20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.basic-slider{
+    border-radius: 10px;
+}
+.body-text-content{
+    font-size: 24px;
+    width: 70%;
+}
+.wrapper{
+    padding-left: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.homepage{
+    background-color:rgb(59, 56, 56);
+}

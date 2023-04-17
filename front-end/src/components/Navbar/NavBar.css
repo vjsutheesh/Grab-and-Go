@@ -1,0 +1,155 @@
+.image-logo {
+  padding-left: 20px;
+  padding-right: 30px;
+  max-width: 140px;
+  margin-right: 24p;
+  height: 27px;
+  padding-bottom: 6px;
+}
+
+.header-right {
+  padding-top: 18px;
+  display: flex;
+  flex: 1;
+  /* justify-content: space-between; */
+  align-items: center;
+  height: 72px;
+}
+
+.header-location-bar {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(25, 135, 207, 0.08)0px 2px 8px;
+  border: 1px solid rgb(232, 232, 232);
+  width: 700px;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.location-wrap {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.location-icon {
+  display: flex;
+  color: #828282;
+}
+
+.iconloc {
+  color: #828282;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.search-bar {
+  display: flex;
+  flex: 2;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #828282;
+  margin: 0px 12px;
+}
+
+.search-text {
+  border: none;
+  outline: none;
+  width: 60%;
+  font-size: 14px;
+  width: 470px;
+}
+
+.profile-wrapper {
+  height: 90px;
+  padding-right: 70px;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  align-items: center;
+}
+
+.header-profile-image {
+  padding-left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: aqua;
+}
+
+.header-username {
+  color: aqua;
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cart-bar {
+  text-decoration: none;
+  padding-left: 80px;
+  width: 130px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+
+.mycart-icon {
+  padding-top: 8px;
+  text-decoration: none;
+  font-size: 35px;
+  color: aqua;
+}
+
+.mycart-name {
+  text-decoration: none;
+  color: aqua;
+}
+
+.seperator {
+  height: 20px;
+  border: 0.5px solid grey;
+}
+
+.NavBar {
+  /* background-color:rgb(59, 56, 56); */
+  height: 100px;
+}
+
+.account-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ /* .mycart-name::after{
+  
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}  */
+.mycart-name:hover::after{
+  content: '';
+  position: absolute;
+  background-color: aqua;
+  height: 3px;
+  width: 90px;
+  display: block;
+  border-radius: 5px;
+  padding-top: 2px;
+}
+.header-username:hover::after{
+  content: '';
+  position: absolute;
+  background-color: aqua;
+  height: 3px;
+  width: 110px;
+  display: block;
+  border-radius: 5px;
+  padding-top: 2px;
+}
