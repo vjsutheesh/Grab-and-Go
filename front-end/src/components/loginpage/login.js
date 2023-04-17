@@ -4,7 +4,7 @@ import Grab from "./Grab.png";
 const Login = () => {
   const history = useHistory();
   const HandleSubmit = () => {
-    history.push("/");
+    history.push("/home");
   };
 
   return (
@@ -13,7 +13,7 @@ const Login = () => {
         <div className="navbar">
           <div className="left-side">Grab & Go</div>
           <div className="right-side">
-            <Link to="/login" className="login">
+            <Link to="/" className="login">
               login
             </Link>
             <Link to="/" className="about">

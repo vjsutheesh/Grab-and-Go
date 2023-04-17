@@ -61,7 +61,7 @@ const Login = () => {
                 Already have an account ?
                 <span>
                   {" "}
-                  <Link to="/login" className="new-register">
+                  <Link to="/" className="new-register">
                     Login
                   </Link>
                 </span>
