@@ -1,9 +1,10 @@
-const ProductList = () => {
+const ProductList = ({MenuList}) => {
     return (
         <>
-            <div>
-                <h1>Hellooo!!!</h1>
-            </div>
+            {/* {MenuList.map(Menu=>(
+                <h1>{Menu}</h1>
+            ))} */}
+            <h1>Hello</h1>
         </>
     );
 }
