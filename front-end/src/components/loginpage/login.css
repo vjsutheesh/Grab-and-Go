@@ -46,7 +46,7 @@
   margin-top: -5px;
   margin-bottom: -5px;
   border-radius: 5px;
-  color: lightgreen;
+  /* color: lightgreen; */
 }
 
 .body {
@@ -73,6 +73,7 @@
 }
 
 .username,
+.email,
 .password {
   margin-bottom: 30px;
   width: 100%;
@@ -84,6 +85,14 @@
   background-color: lightgray;
   border-radius: 50px;
   outline: none;
+}
+
+.email {
+  padding-left: 40px;
+}
+
+.password {
+  padding-left: 40px;
 }
 
 .submit-btn {
@@ -113,17 +122,15 @@
 }
 
 .icon {
-  padding: 10px;
-  padding-bottom: 10px;
   padding-top: 12px;
   padding-left: 15px;
-  min-width: 40px;
 }
 
 .input {
   width: 100%;
   padding: 10px;
   text-align: center;
+  margin-left: 10px;
 }
 
 .account {

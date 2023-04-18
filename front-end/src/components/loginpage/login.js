@@ -45,7 +45,7 @@ const Login = () => {
                 />
               </div>
               <button className="submit-btn" onClick={HandleSubmit}>
-                Submit
+                Login
               </button>
               <p className="account">
                 Don't have an account ?
