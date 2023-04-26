@@ -79,10 +79,14 @@
 
 .header-profile-image {
   padding-left: 10px;
+  margin-top: 15px;
   height: 40px;
   width: 40px;
   border-radius: 50%;
   color: white;
+}
+.dropdownmenu {
+  display: none;
 }
 
 .header-username {
@@ -143,6 +147,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 }
 /* .mycart-name::after{
   
@@ -160,3 +165,13 @@
   border-radius: 5px;
   padding-top: 2px;
 }
+/* .header-username:hover::after{
+  content: '';
+  position: absolute;
+  background-color: aqua;
+  height: 3px;
+  width: 110px;
+  display: block;
+  border-radius: 5px;
+  padding-top: 2px;
+} */

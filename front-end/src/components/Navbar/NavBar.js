@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Grab from "./Grab.png";
 // import { useState,useEffect } from "react";
-import { MdWhereToVote, MdSearch } from "react-icons/md";
+import { MdWhereToVote, MdSearch, MdArrowDropDown } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";
 import { CgShoppingCart } from "react-icons/cg";
@@ -65,4 +65,5 @@ const NavBar = () => {
     </>
   );
 };
+
 export default NavBar;
