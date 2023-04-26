@@ -21,11 +21,10 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
-  box-shadow: rgba(25, 135, 207, 0.08)0px 2px 8px;
+  box-shadow: rgba(25, 135, 207, 0.08) 0px 2px 8px;
   border: 1px solid rgb(232, 232, 232);
   width: 700px;
   background-color: rgb(255, 255, 255);
-
 }
 
 .location-wrap {
@@ -74,19 +73,37 @@
   align-items: center;
 }
 
+.account-details {
+  text-decoration: none;
+}
+
 .header-profile-image {
   padding-left: 10px;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  color: aqua;
+  color: white;
 }
 
 .header-username {
-  color: aqua;
+  color: white;
   font-size: 26px;
   font-weight: 600;
   text-decoration: none;
+}
+
+.header-username:hover,
+.header-profile-image:hover {
+  color: lightgreen;
+  margin-bottom: 5px;
+  /* content: "";
+  position: absolute;
+  background-color: lightgreen;
+  text-decoration: underline;
+  height: 3px;
+  display: block;
+  border-radius: 5px;
+  padding-top: 2px; */
 }
 
 .cart-bar {
@@ -104,12 +121,12 @@
   padding-top: 8px;
   text-decoration: none;
   font-size: 35px;
-  color: aqua;
+  color: white;
 }
 
 .mycart-name {
   text-decoration: none;
-  color: aqua;
+  color: white;
 }
 
 .seperator {
@@ -127,28 +144,18 @@
   justify-content: space-between;
   align-items: center;
 }
- /* .mycart-name::after{
+/* .mycart-name::after{
   
   left: 0;
   bottom: -10px;
   transition: 0.3s;
 }  */
-.mycart-name:hover::after{
-  content: '';
+.mycart-name:hover::after {
+  content: "";
   position: absolute;
   background-color: aqua;
   height: 3px;
   width: 90px;
-  display: block;
-  border-radius: 5px;
-  padding-top: 2px;
-}
-.header-username:hover::after{
-  content: '';
-  position: absolute;
-  background-color: aqua;
-  height: 3px;
-  width: 110px;
   display: block;
   border-radius: 5px;
   padding-top: 2px;

@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
   const [userName, setUsername] = useState("");
@@ -11,27 +12,42 @@ const Register = () => {
 
   const IsValidate = () => {
     let isproceed = true;
-    let errormessage = "Please enter the value in";
+    let errormessage = "";
     if (userName === null || userName === "") {
       isproceed = false;
-      errormessage += "Username";
-    }
-    if (password === null || password === "") {
-      isproceed = false;
-      errormessage += "Password";
+      toast.info("Please enter Username", {
+        autoClose: 1000,
+        closeButton: false,
+        hideProgressBar: true,
+      });
     }
     if (email === null || email === "") {
       isproceed = false;
-      errormessage += "Email";
+      toast.info("Please enter Email", {
+        autoClose: 1000,
+        closeButton: false,
+        hideProgressBar: true,
+      });
+    }
+    if (password === null || password === "") {
+      isproceed = false;
+      toast.info("Please enter Password", {
+        autoClose: 1000,
+        closeButton: false,
+        hideProgressBar: true,
+      });
     }
     if (!isproceed) {
-      console.log(errormessage);
     } else {
       if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
       } else {
         isproceed = false;
         errormessage = "Please enter the valid email";
-        console.log(errormessage);
+        toast.info(errormessage, {
+          autoClose: 1000,
+          closeButton: false,
+          hideProgressBar: true,
+        });
       }
     }
     return isproceed;
@@ -41,40 +57,37 @@ const Register = () => {
     let checkData = false;
     let checkName = true;
     let checkEmail = true;
-
-    return fetch("http://127.0.0.1:5000/data")
-      .then((res) => {
-        return res.json();
-      })
-      .then((resp) => {
-        {
-          Object.values(resp).map((userData) => {
-            if (userData["userName"] === userName && checkName) {
-              checkName = false;
-              console.log("Username already exists");
-            }
-            if (userData["email"] === email && checkEmail) {
-              checkEmail = false;
-              console.log("Email address already exists");
-            }
+    console.log(data);
+    {
+      data.forEach((userData) => {
+        if (userData["userName"] === userName) {
+          checkName = false;
+          toast.warning("Username already exists", {
+            autoClose: 1000,
+            closeButton: false,
+            hideProgressBar: true,
           });
         }
-        if (checkName === true && checkEmail === true) {
-          checkData = true;
+        if (userData["email"] === email) {
+          checkEmail = false;
+          toast.warning("Email address already exists", {
+            autoClose: 1000,
+            closeButton: false,
+            hideProgressBar: true,
+          });
         }
-        return checkData;
-      })
-      .catch((err) => {
-        console.log("Server error" + err.message);
       });
+    }
+    if (checkName === true && checkEmail === true) {
+      checkData = true;
+    }
+
+    return checkData;
   };
 
   const HandleSubmit = (e) => {
     e.preventDefault();
     let regobj = { userName, email, password };
-    setTimeout(() => {
-      console.log(dataAlreadyExists.checkData);
-    }, 1000);
 
     if (IsValidate() && dataAlreadyExists()) {
       fetch("http://127.0.0.1:5000/getdata", {
@@ -83,12 +96,51 @@ const Register = () => {
         body: JSON.stringify(regobj),
       })
         .then(() => {
-          console.log(regobj);
+          toast.success("Registered Sucessfully!", {
+            autoClose: 1000,
+            closeButton: false,
+            hideProgressBar: true,
+          });
           history.push("/");
         })
         .catch((err) => {
-          console.log(err);
+          toast.error("Server error:" + err, {
+            autoClose: 3000,
+            closeButton: false,
+            hideProgressBar: true,
+          });
         });
+    }
+  };
+
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/data")
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("could not fetch the data");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((err) => {
+        toast.error("Register page not working.", {
+          autoClose: 3000,
+          closeButton: false,
+          hideProgressBar: true,
+        });
+      });
+  }, []);
+
+  const showPassword = () => {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
   };
 
@@ -130,7 +182,7 @@ const Register = () => {
                 />
                 <i className="fa fa-envelope icon"></i>
                 <input
-                  type="email"
+                  type="text"
                   placeholder="youremail@gmail.com"
                   className="email"
                   value={email}
@@ -143,8 +195,14 @@ const Register = () => {
                   className="password"
                   minlength="6"
                   value={password}
+                  id="myInput"
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <i
+                  class="fa fa-eye eye-icon"
+                  type="button"
+                  onClick={showPassword}
+                ></i>
               </div>
               <button className="submit-btn">Register</button>
               <p className="account">

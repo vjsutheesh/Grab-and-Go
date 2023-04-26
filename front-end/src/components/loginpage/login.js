@@ -1,17 +1,15 @@
 import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
 import { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const history = useHistory();
-
   useEffect(() => {
     sessionStorage.clear();
   }, []);
-
   const [inputName, setInputname] = useState("");
   const [password, setPassword] = useState("");
-
   const HandleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -33,28 +31,50 @@ const Login = () => {
             });
           }
           if (flag) {
-            console.log("Invalid Username or Password");
-          } else {
-            console.log("Logged In successfully!");
+            toast.warning("Invalid Username or Password", {
+              autoClose: 1000,
+              closeButton: false,
+              hideProgressBar: true,
+            });
           }
         })
         .catch((err) => {
-          console.log("Login Failed due to :" + err.message);
+          toast.error("Login Failed due to :" + err.message, {
+            autoClose: 3000,
+            closeButton: false,
+            hideProgressBar: true,
+          });
         });
     }
   };
-
   const validate = () => {
     let result = true;
     if (inputName === null || inputName === "") {
       result = false;
-      console.log("Please Enter Username");
+      toast.info("Please Enter Username", {
+        autoClose: 1000,
+        closeButton: false,
+        hideProgressBar: true,
+      });
     }
     if (password === null || password === "") {
       result = false;
-      console.log("Please Enter Password");
+      toast.info("Please Enter Password", {
+        autoClose: 1000,
+        closeButton: false,
+        hideProgressBar: true,
+      });
     }
     return result;
+  };
+
+  const showPassword = () => {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
   };
 
   return (
@@ -95,8 +115,14 @@ const Login = () => {
                   placeholder="Password"
                   className="password"
                   value={password}
+                  id="myInput"
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <i
+                  class="fa fa-eye eye-icon"
+                  type="button"
+                  onClick={showPassword}
+                ></i>
               </div>
               <button className="submit-btn">Login</button>
               <p className="account">

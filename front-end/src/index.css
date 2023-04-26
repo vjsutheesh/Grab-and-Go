@@ -1,7 +1,9 @@
 @import "./components/Navbar/NavBar.css";
+@import "./components/Navbar/DropDownProfile.css";
 @import "./components/Homepage/Home.css";
 @import "./components/Homepage/Cards.css";
 @import "./components/loginpage/login.css";
+@import "react-toastify/dist/ReactToastify.css";
 body {
   margin: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
