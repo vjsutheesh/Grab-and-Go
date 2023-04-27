@@ -1,0 +1,90 @@
+.dropDownProfile {
+  position: absolute;
+  top: 95px;
+  right: 30px;
+  height: 250px;
+  width: 300px;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid grey;
+  z-index: 5;
+}
+
+.dropDownProfile::before {
+  content: "";
+  position: absolute;
+  top: -11.2px;
+  right: 55px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: rgb(237, 237, 237);
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+.user-details {
+  background-color: rgb(237, 237, 237);
+  height: 90px;
+  border-bottom: 2px solid rgb(237, 237, 237);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar-pic {
+  margin: 15px 10px 10px 10px;
+  width: 60px;
+  height: 60px;
+  color: black;
+}
+
+.user-name {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px 10px 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-profile,
+.orderhistory {
+  font-size: 18px;
+  font-weight: 650;
+  padding: 13px 12px;
+}
+
+.my-profile-link,
+.orderhistory-link {
+  text-decoration: none;
+  color: black;
+}
+
+.logout {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: black;
+  padding: 15px 10px;
+  border-top: 1px solid rgb(234, 234, 234);
+}
+
+.logout-link {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.logout-icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.my-profile:hover,
+.orderhistory:hover,
+.logout:hover {
+  background-color: rgb(248, 248, 248);
+  color: lightgreen;
+}

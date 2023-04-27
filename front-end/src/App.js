@@ -5,6 +5,8 @@ import Home from "./components/Homepage/Home";
 import MyCart from "./components/MyCart/MyCart";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductList from "./components/Homepage/ProductList";
+import { ToastContainer } from "react-toastify";
+import DropDownProfile from "./components/Navbar/DropDownProfile";
 function App() {
   return (
     <Router>
@@ -19,7 +21,7 @@ function App() {
           <Route path="/mycart">
             <MyCart />
           </Route>
-          <Route path="/ProductList/:hotelName">
+          <Route path="/ProductList">
             <ProductList></ProductList>
           </Route>
           <Route path="/Register">

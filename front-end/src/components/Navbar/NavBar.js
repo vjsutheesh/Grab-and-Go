@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import Grab from "./Grab.png";
 // import { useState,useEffect } from "react";
-import { MdWhereToVote, MdSearch } from "react-icons/md";
+import { MdWhereToVote, MdSearch, MdArrowDropDown } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";
 import { CgShoppingCart } from "react-icons/cg";
+import DropDownProfile from "./DropDownProfile";
+import { useEffect, useState } from "react";
 const NavBar = () => {
+  const [openProfile, setOpenprofile] = useState(false);
+
   return (
     <div className="header home">
       <div className="image-logo">
@@ -43,8 +47,7 @@ const NavBar = () => {
           </div>
           <div className="account-details">
             <a href="/" className="header-username">
-              {/* {sessionStorage.getItem("username")} */}
-              Sutheesh
+              {sessionStorage.getItem("username")}
             </a>
             <a href="/">
               <VscAccount className="header-profile-image" />
@@ -55,4 +58,5 @@ const NavBar = () => {
     </div>
   );
 };
+
 export default NavBar;
