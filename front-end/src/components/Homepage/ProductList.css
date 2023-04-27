@@ -1,0 +1,74 @@
+.product-page{
+    background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365");
+}
+.hotel-desc{
+    /* padding-left: 30px; */
+    margin: 20px auto 0;
+    max-width: 800px;
+    min-height: 800px;
+    color: azure;
+}
+.seperator-bar{
+    max-width: inherit;
+    height: 5px;
+    background-color:white;
+    border-radius: 5px;
+    /* border: 0.5px solid grey; */
+}
+.hotel-menu{
+    width: 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pricing{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:4%;
+}
+.price-value{
+    padding-bottom: 3px;
+}
+.seperator-food{
+    max-width: inherit;
+    height: 0.1px;
+    background-color: azure;
+}
+.quantity{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.quantity-value{
+    padding-left: 18px;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    color: black;
+    background-color: azure;
+}
+.button-box{
+    position:fixed;
+    width: 180px;
+    height: 45px;
+    line-height: 45px;
+    bottom: 4%;
+    right: 40%;
+    border-radius: 10px;
+}
+.cart-button{
+    color: aliceblue;
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color:rgb(36, 150,63 );
+    border-radius: 10px;
+}
+.cart-button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: aqua;
+}

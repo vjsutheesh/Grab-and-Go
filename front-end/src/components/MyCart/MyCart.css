@@ -1,0 +1,48 @@
+.mycart{
+    background-image: url("https://cdn.wallpapersafari.com/83/37/wTeWPs.jpg");
+    height:1000px;
+}
+.my-cart{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.cart-menu{
+    color: lightgreen;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    padding-top: 40px;
+}
+.seperator-cart{
+    width: inherit;
+    height: 2px;
+    background-color:aliceblue;
+}
+.selected-items{
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 20px;
+    color: aliceblue;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.item{
+    width: 150px;
+    height: 30px;
+}
+.price{
+    width: 150px;
+    height: 30px;
+}
+.quantitty{
+    width: 150px;
+    height: 30px;
+}
+.subtotal{
+    width: 150px;
+    height: 30px;
+}

@@ -2,6 +2,8 @@
 @import "./components/Homepage/Home.css";
 @import "./components/Homepage/Cards.css";
 @import "./components/loginpage/login.css";
+@import "./components/Homepage/ProductList.css";
+@import "./components/MyCart/MyCart.css";
 body {
   margin: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",

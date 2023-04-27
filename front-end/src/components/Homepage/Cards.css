@@ -2,8 +2,10 @@
     max-width: inherit;
 }
 .button-click{
-    max-width: 100%; 
+    max-width: inherit; 
     text-decoration: none; 
+    border-radius: 20px;
+    border: none;
 }
 .button-click:hover{
     cursor: pointer;
@@ -20,5 +22,8 @@
 .desc{
     text-align: center;
     color: #777;
+}
+.hotel-list{
+    border-radius: 20px;
 }
 

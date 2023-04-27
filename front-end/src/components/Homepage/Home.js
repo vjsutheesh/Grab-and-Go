@@ -6,21 +6,23 @@ import { useHistory } from "react-router-dom";
 const Home = () => {
   const history = useHistory();
 
-  useEffect(() => {
-    const username = sessionStorage.getItem("username");
-    if (username === "" || username === null) {
-      history.push("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const username = sessionStorage.getItem("username");
+  //   if (username === "" || username === null) {
+  //     history.push("/");
+  //   }
+  // }, []);
 
   return (
     <>
       <div className="homepage">
+        <div className="body-first">
         <div className="NavBar">
           <NavBar></NavBar>
         </div>
         <div className="body-content">
           <BasicSlider className="basic-slider" />
+        </div>
         </div>
         <div className="body-text">
           <h1 className="body-text-heading">

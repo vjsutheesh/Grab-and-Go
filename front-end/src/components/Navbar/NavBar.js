@@ -43,7 +43,8 @@ const NavBar = () => {
           </div>
           <div className="account-details">
             <a href="/" className="header-username">
-              {sessionStorage.getItem("username")}
+              {/* {sessionStorage.getItem("username")} */}
+              Sutheesh
             </a>
             <a href="/">
               <VscAccount className="header-profile-image" />

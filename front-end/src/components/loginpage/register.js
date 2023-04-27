@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Register = () => {
   const [userName, setUsername] = useState("");
@@ -91,7 +92,7 @@ const Register = () => {
         });
     }
   };
-
+  useEffect(()=>{},[])
   return (
     <>
       <div className="container">
