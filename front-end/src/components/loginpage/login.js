@@ -84,9 +84,9 @@ const Login = () => {
           <div className="left-side">Grab & Go</div>
           <div className="right-side">
             <Link to="/" className="login">
-              login
+              Login
             </Link>
-            <Link to="/" className="about">
+            <Link to="/aboutus" className="about">
               About Us
             </Link>
             <Link to="/register" className="register">

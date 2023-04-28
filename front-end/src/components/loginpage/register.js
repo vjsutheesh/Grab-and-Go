@@ -1,9 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [userName, setUsername] = useState("");
@@ -114,8 +112,7 @@ const Register = () => {
         });
     }
   };
-  useEffect(()=>{},[])
-
+  useEffect(() => {}, []);
 
   const [data, setData] = useState("");
 
@@ -155,9 +152,9 @@ const Register = () => {
           <div className="left-side">Grab & Go</div>
           <div className="right-side">
             <Link to="/" className="login" style={{ color: "white" }}>
-              login
+              Login
             </Link>
-            <Link to="/" className="about">
+            <Link to="/aboutus" className="about">
               About Us
             </Link>
             <Link

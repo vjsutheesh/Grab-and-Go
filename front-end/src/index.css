@@ -3,12 +3,11 @@
 @import "./components/Homepage/Home.css";
 @import "./components/Homepage/Cards.css";
 @import "./components/loginpage/login.css";
-<<<<<<< HEAD
+@import "./components/loginpage/aboutus.css";
+@import "./components/loginpage/ContactUs.css";
 @import "./components/Homepage/ProductList.css";
 @import "./components/MyCart/MyCart.css";
-=======
 @import "react-toastify/dist/ReactToastify.css";
->>>>>>> 852e3822035e00eb83cf85c3bea6abd592861eef
 body {
   margin: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
