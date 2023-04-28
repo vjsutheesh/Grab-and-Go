@@ -1,11 +1,11 @@
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, json,jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 user_details = []
-selected_Item = []
+selected_Item={'items':[]}
 
 
 @app.route('/getdata', methods=["GET", "POST"])
@@ -52,16 +52,11 @@ def hotel_desc(hotelName:str):
     if (hotelName == "A1-Biriyani"):
         hotel_desc =a1biriyaniDesc 
     return hotel_desc
-@app.route('/selectedItem',methods=['GET','POST'])
+@app.route('/selectedItem',methods=['POST'])
 def get_Items():
-    if request.json:
-        data = request.get_json()
-        print(data)
-        selected_Item = data
-        print("Selected items:")
-        print(selected_Item)
-    return selected_Item
+    selected_Item = request.get_json()
+    print(selected_Item)
+    return selected_Item['items']
 @app.route('/cartItems',methods=['GET','POST'])
 def get_Cart():
-    print(selected_Item)
-    return selected_Item
+    return selected_Item['items']
