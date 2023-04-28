@@ -2,7 +2,6 @@ import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
@@ -90,6 +89,7 @@ const Register = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     let regobj = { userName, email, password };
+    console.log(regobj)
 
     if (IsValidate() && dataAlreadyExists()) {
       fetch("http://127.0.0.1:5000/getdata", {

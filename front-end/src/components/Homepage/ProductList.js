@@ -1,5 +1,3 @@
-// import { useState } from "react";
-// import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import NavBar from "../Navbar/NavBar";
 import { useEffect } from "react";
@@ -7,12 +5,13 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 const ProductList = () => {
     const history = useHistory();
+    // const hotelName="Vasantham";
     const { hotelName } = useParams();
     const [error, setError] = useState("");
     const [hotel_desc, setHotel_desc] = useState([]);
     const [Menu_List, setMenu_List] = useState([]);
     const [quantity, setQuantity] = useState(1);
-    const [selected_items, setSelectesItems] = useState([]);
+    const [selected_items, setSelectesItems] = useState({items:[]});
     const handleDecrement = (quantity, dishname) => {
         Menu_List.forEach(menu => {
             if (menu.DishName === dishname) {
@@ -21,7 +20,6 @@ const ProductList = () => {
                     setQuantity(menu.quantity--)
                     console.log(quantity)
                 }
-
             }
         });
     }
@@ -35,18 +33,22 @@ const ProductList = () => {
         });
     }
     const handleItems = (items) => {
-        setSelectesItems(items);
+        setSelectesItems({items:items});
+    }
+    useEffect(()=>{
+        if(selected_items.items.length<1)
+        return;
         console.log("selected items :")
         console.log(selected_items)
         fetch("http://127.0.0.1:5000/selectedItem", {
         method: "POST",
-        headers: {'Accept': 'application/json', "content-type": "application/json" },
+        headers: {"content-type": "application/json"},
         body: JSON.stringify(selected_items),
       })
       .then(()=>{
-        history.push('/mycart');
-      })
-    }
+        history.push('/mycart/'+hotelName);
+      })},[selected_items])
+
     console.log("welcome to " + hotelName)
     useEffect(() => {
         console.log(hotelName)
@@ -81,7 +83,6 @@ const ProductList = () => {
             .catch((err) => {
                 setError(err.message)
             })
-
     }, [hotelName]
     )
 
@@ -104,7 +105,6 @@ const ProductList = () => {
                         <i class="fa fa-bars" aria-hidden="true"></i>
                         <h3>MENU</h3>
                     </div>
-
                     {
                         Menu_List.map(menu => (
                             <div>
@@ -123,14 +123,12 @@ const ProductList = () => {
                         ))
                     }
                 </div>
-
             ))
             }
             <div className="button-box">
                 <button type="button" className="cart-button" onClick={() => handleItems(Menu_List)}>Add to Cart </button>
             </div>
         </div>
-
         </>
     );
 }

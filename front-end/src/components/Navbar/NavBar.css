@@ -83,14 +83,14 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  color: white;
+  color:aqua;
 }
 .dropdownmenu {
   display: none;
 }
 
 .header-username {
-  color: white;
+  color:aqua;
   font-size: 26px;
   font-weight: 600;
   text-decoration: none;
@@ -125,12 +125,12 @@
   padding-top: 8px;
   text-decoration: none;
   font-size: 35px;
-  color: white;
+  color:aqua;
 }
 
 .mycart-name {
   text-decoration: none;
-  color: white;
+  color: aqua;
 }
 
 .seperator {

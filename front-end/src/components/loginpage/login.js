@@ -119,7 +119,8 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <i
-                  class="fa fa-eye eye-icon"
+                  // class="fa fa-eye eye-icon"
+                  className="eye-icon"
                   type="button"
                   onClick={showPassword}
                 ></i>

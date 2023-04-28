@@ -9,30 +9,11 @@ const Cards = () => {
     {hotelName:"Jallikattu",rating:"4.0",Desc:"Hotel Jallikattu is very busy in 7:00 to 9:00 in nights"},
     {hotelName:"Tea-Time",rating:"4.5",Desc:"Hotel Tea-Time is very busy in 7:00 to 9:00 in nights"},
     {hotelName:"A1-Biriyani",rating:"4.7",Desc:"Hotel A1-Biriyani is very busy in 7:00 to 9:00 in nights"}];
-    const VasanthamMenu = ["Biriyani", "Fried rice", "Veg-Meals", "Non-veg Meals", "Dosai", "Parotta", "kothu-Parotta"];
-    const JallikattuMenu = ["Biriyani", "Fried rice", "Dosai", "Parotta"];
-    const TeaTimeMenu = ["Biriyani", "Fried rice", "Dosai", "Parotta"];
-    const A1BiriyaniMenu = ["Biriyani", "Fried rice", "Dosai", "Parotta"];
-    const [menuList, setMenuList] = useState(VasanthamMenu);
     const history = useHistory();
     const HandleClick = (hotelName) => {
         console.log(hotelName);
-        if (hotelName === "Vasantham") {
-            setMenuList(VasanthamMenu);
-        }
-        if (hotelName === "Jallikattu") {
-            setMenuList(JallikattuMenu);
-        }
-        if (hotelName === "Tea-Time") {
-            setMenuList(TeaTimeMenu);
-        }
-        if (hotelName === "A1-Biriyani") {
-            setMenuList(A1BiriyaniMenu);
-        }
-        console.log(menuList);
         history.push('/ProductList/'+hotelName);
     }
-    
     return (
         <>
             {
