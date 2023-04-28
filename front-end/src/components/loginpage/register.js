@@ -88,6 +88,7 @@ const Register = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     let regobj = { userName, email, password };
+    console.log(regobj);
 
     if (IsValidate() && dataAlreadyExists()) {
       fetch("http://127.0.0.1:5000/getdata", {

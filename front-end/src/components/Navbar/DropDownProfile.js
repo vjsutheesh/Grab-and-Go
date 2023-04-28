@@ -9,7 +9,7 @@ const DropDownProfile = () => {
         </div>
         <div className="user-name">{sessionStorage.getItem("username")}</div>
       </div>
-      <div className="content">
+      <div className="drop-content">
         <a href="#" className="my-profile-link my-profile">
           MY PROFILE
         </a>
