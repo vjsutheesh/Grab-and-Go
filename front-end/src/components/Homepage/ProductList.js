@@ -5,13 +5,12 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 const ProductList = () => {
     const history = useHistory();
-    // const hotelName="Vasantham";
     const { hotelName } = useParams();
     const [error, setError] = useState("");
     const [hotel_desc, setHotel_desc] = useState([]);
     const [Menu_List, setMenu_List] = useState([]);
     const [quantity, setQuantity] = useState(1);
-    const [selected_items, setSelectesItems] = useState({items:[]});
+    const [selected_items, setSelectesItems] = useState([]);
     const handleDecrement = (quantity, dishname) => {
         Menu_List.forEach(menu => {
             if (menu.DishName === dishname) {
@@ -33,10 +32,10 @@ const ProductList = () => {
         });
     }
     const handleItems = (items) => {
-        setSelectesItems({items:items});
+        setSelectesItems(items);
     }
     useEffect(()=>{
-        if(selected_items.items.length<1)
+        if(selected_items.length<1)
         return;
         console.log("selected items :")
         console.log(selected_items)

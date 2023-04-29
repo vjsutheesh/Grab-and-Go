@@ -12,7 +12,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="header home">
+      <div className="header-home">
         <div className="image-logo">
           <Link to="/" className="logo-link">
             <img src={Grab} alt="Loading...." />

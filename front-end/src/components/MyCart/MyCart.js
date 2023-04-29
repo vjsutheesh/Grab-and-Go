@@ -4,6 +4,15 @@ import NavBar from "../Navbar/NavBar";
 const MyCart = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
+  // const[values,setValues]=useState([]);
+  // data.forEach(e => {
+  //   if(e.quantity>0)
+  //   {
+  //     setValues(e)
+  //   }
+  // });
+  // console.log(values);
+  console.log("hai");
   useEffect(() => {
     fetch('http://127.0.0.1:5000/cartItems')
       .then((res) => {
@@ -13,16 +22,16 @@ const MyCart = () => {
         console.log(res)
         return res.json();
       })
-      .then((data) => {
-        console.log(data)
-        setData(data)
+      .then((d) => {
+        d.forEach(element => {
+          setData(element)
+          console.log(data)
+        });
       })
       .catch((err) => {
         setError(err.message)
       })
   }, [])
-  console.log(data)
-  console.log(error)
   return (
     <>
       <div className="mycart">
@@ -45,20 +54,23 @@ const MyCart = () => {
             </div>
           </div>
           <div className="seperator-cart"></div>
-          <div className="selected-items">
+          {data.map((i) =>(
+            <div className="selected-items">
             <div className="item">
-              <p>Fried rice</p>
+              <p>{i.DishName}</p>
             </div>
             <div className="price">
-              <p>80</p>
+              <p>{i.price}</p>
             </div>
             <div className="quantitty">
-              <p>2</p>
+              <p>{i.quantity}</p>
             </div>
             <div className="subtotal">
-              <p>160</p>
+              <p>{i.price * i.quantity}</p>
             </div>
           </div>
+           ))
+          }
         </div>
       </div>
     </>
