@@ -10,7 +10,7 @@ const ContactUs = () => {
   const [message, setMessage] = useState("");
 
   const handleClose = () => {
-    history.push("/aboutus");
+    history.push("/");
   };
 
   const HandleFeedbackSubmit = (e) => {
@@ -55,7 +55,7 @@ const ContactUs = () => {
                   <i class="fa fa-phone contact-icon"></i>
                   <div className="subtitle">Call Us</div>
                 </div>
-                <p className="detail">9876543210, 9876543210, 9876543210</p>
+                <p className="detail">6382661948 , 6382888824 , 6381114854</p>
               </div>
               <div className="block">
                 <div className="sub-block">

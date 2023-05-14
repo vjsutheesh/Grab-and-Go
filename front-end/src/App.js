@@ -1,4 +1,5 @@
 import React from "react";
+import Cards from "./components/Homepage/Cards";
 import Login from "./components/loginpage/login";
 import Register from "./components/loginpage/register";
 import Home from "./components/Homepage/Home";
@@ -9,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import DropDownProfile from "./components/Navbar/DropDownProfile";
 import AboutUs from "./components/loginpage/AboutUs";
 import ContactUs from "./components/loginpage/ContactUs";
+import Admin from "./components/Adminpage/Admin";
 function App() {
   return (
     <>
@@ -28,8 +30,11 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+             <Route path="/cards">
+              <Cards />
+            </Route> 
             <Route path="/mycart/:hotelName">
-              <MyCart />
+              <MyCart/>
             </Route>
             <Route path="/ProductList/:hotelName">
               <ProductList></ProductList>
@@ -37,8 +42,11 @@ function App() {
             <Route path="/Register">
               <Register />
             </Route>
-            <Route>
+            <Route path="/down">
               <DropDownProfile />
+            </Route>
+            <Route path="/admin">
+              <Admin/>
             </Route>
           </Switch>
         </div>

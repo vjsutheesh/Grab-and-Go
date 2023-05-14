@@ -10,10 +10,10 @@ const DropDownProfile = () => {
         <div className="user-name">{sessionStorage.getItem("username")}</div>
       </div>
       <div className="drop-content">
-        <a href="#" className="my-profile-link my-profile">
+        <a href="/profile" className="my-profile-link my-profile">
           MY PROFILE
         </a>
-        <a href="#" className="orderhistory orderhistory-link">
+        <a href="/history" className="orderhistory orderhistory-link">
           ORDER HISTORY
         </a>
       </div>

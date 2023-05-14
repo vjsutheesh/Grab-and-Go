@@ -23,7 +23,7 @@ const Cards = () => {
                             <div className='container-11' >
                                 <img src={Biriyani} alt="loading ..." style={{ width: '400px', }} />
                                 <div className='details'>
-                                    <h1 className="title">{hotel.hotelName}</h1>
+                                    <h1 className="title-hotel">{hotel.hotelName}</h1>
                                     <span className='rating'> {hotel.rating}&nbsp; ★</span>
                                 </div>
                                 <p className="desc">{hotel.Desc}</p>

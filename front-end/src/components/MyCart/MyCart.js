@@ -1,18 +1,15 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
 import NavBar from "../Navbar/NavBar";
+import { toast } from "react-toastify";
 const MyCart = () => {
+  const { hotelName } = useParams();
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
-  // const[values,setValues]=useState([]);
-  // data.forEach(e => {
-  //   if(e.quantity>0)
-  //   {
-  //     setValues(e)
-  //   }
-  // });
-  // console.log(values);
-  console.log("hai");
+  const[values,setValues]=useState([]);
+  let amount = 0;
+  console.log("grab"+hotelName)
   useEffect(() => {
     fetch('http://127.0.0.1:5000/cartItems')
       .then((res) => {
@@ -23,15 +20,29 @@ const MyCart = () => {
         return res.json();
       })
       .then((d) => {
-        d.forEach(element => {
-          setData(element)
-          console.log(data)
-        });
+          setData(d)
       })
       .catch((err) => {
         setError(err.message)
       })
   }, [])
+    data.forEach(i => {
+      amount=amount+(i.price * i.quantity);
+    })
+    const handleItems = () => {
+      toast.success("Order placed sucessfully", {
+          autoClose: 1000,
+          closeButton: false,
+          hideProgressBar: true})
+          let obj = {hotelName,amount}
+          fetch("http://127.0.0.1:5000/postadmin", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(obj),
+          })
+  }
+  if (data.length > 0)
+  {
   return (
     <>
       <div className="mycart">
@@ -53,28 +64,55 @@ const MyCart = () => {
               <h4>SUBTOTAL</h4>
             </div>
           </div>
-          <div className="seperator-cart"></div>
-          {data.map((i) =>(
+          <div className="seperator-cart-1"></div>
+          {data.map((i) => (
             <div className="selected-items">
-            <div className="item">
-              <p>{i.DishName}</p>
+              <div className="item">
+                <p>{i.DishName}</p>
+              </div>
+              <div className="price">
+                <p>{i.price}</p>
+              </div>
+              <div className="quantitty">
+                <p>{i.quantity}</p>
+              </div>
+              <div className="subtotal">
+                <p>{i.price * i.quantity}</p>
+              </div>
             </div>
-            <div className="price">
-              <p>{i.price}</p>
-            </div>
-            <div className="quantitty">
-              <p>{i.quantity}</p>
-            </div>
-            <div className="subtotal">
-              <p>{i.price * i.quantity}</p>
-            </div>
-          </div>
-           ))
+          ))
           }
+          <div className="seperator-cart-2"></div>
+          <button className="amount" onClick={() => handleItems()}>
+          <h5>PLACE ORDER </h5>
+            <h5>₹{amount}</h5>
+          </button>
+        </div>
+        <div>
+          <a href="/admin">Order something here</a>
         </div>
       </div>
+      
     </>
-  );
+  );}
+    else 
+    {
+      return(
+        <>
+        <div className="mycart">
+        <div className="NavBar">
+          <NavBar></NavBar>
+        </div>
+        <div className="order-nothing">
+          <h1>you haven't order anything . . .</h1>
+        </div>
+        <div>
+          <a href="/admin">Order something here</a>
+        </div>
+        </div>
+        </>
+      )
+    }
 }
 
 export default MyCart;

@@ -155,8 +155,8 @@ const Register = () => {
             <Link to="/" className="login" style={{ color: "white" }}>
               Login
             </Link>
-            <Link to="/aboutus" className="about">
-              About Us
+            <Link to="/contactus" className="about">
+              Contact us
             </Link>
             <Link
               to="/register"

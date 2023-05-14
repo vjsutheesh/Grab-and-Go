@@ -6,8 +6,9 @@ CORS(app)
 
 user_details = []
 feedback_data = []
-selected_Item = {'items': []}
-
+select_item=[]
+selected_Item = []
+details =[]
 
 @app.route('/getdata', methods=["GET", "POST"])
 def get_data():
@@ -84,14 +85,35 @@ def hotel_desc(hotelName: str):
     return hotel_desc
 
 
-@app.route('/selectedItem', methods=['POST'])
+@app.route('/selectedItem', methods=['POST', 'GET'])
 def get_Items():
     get_item = request.get_json()
-    selected_Item['items'].append(get_item)
-    print(selected_Item)
-    return selected_Item['items']
+    select_item.clear()
+    select_item.append(get_item)
+    print("hello")
+    print(select_item)
+    return select_item
 
 
 @app.route('/cartItems', methods=['GET', 'POST'])
 def get_Cart():
-    return selected_Item['items']
+    cart_item=[]
+    for data in select_item:
+        print("hai")
+        print(data)
+        for i in data:
+            if i['quantity'] > 0 :
+                cart_item.append(i)
+                selected_Item.append(cart_item)
+    print("cart items :")
+    print(cart_item)
+    return cart_item
+@app.route('/postadmin',methods=['POST'])
+def post_Admin():
+    get_item = request.get_json()
+    details.clear()
+    details.append(get_item)
+    return details
+@app.route('/getadmin',methods=['GET'])
+def get_Admin():
+    return details

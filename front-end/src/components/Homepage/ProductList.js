@@ -9,8 +9,9 @@ const ProductList = () => {
     const [error, setError] = useState("");
     const [hotel_desc, setHotel_desc] = useState([]);
     const [Menu_List, setMenu_List] = useState([]);
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState();
     const [selected_items, setSelectesItems] = useState([]);
+    
     const handleDecrement = (quantity, dishname) => {
         Menu_List.forEach(menu => {
             if (menu.DishName === dishname) {
@@ -31,6 +32,7 @@ const ProductList = () => {
             }
         });
     }
+    useEffect(() => {},[quantity])
     const handleItems = (items) => {
         setSelectesItems(items);
     }

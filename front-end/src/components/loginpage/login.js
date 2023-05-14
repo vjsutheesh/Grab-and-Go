@@ -86,8 +86,8 @@ const Login = () => {
             <Link to="/" className="login">
               Login
             </Link>
-            <Link to="/aboutus" className="about">
-              About Us
+            <Link to="/contactus" className="about">
+              Contact us
             </Link>
             <Link to="/register" className="register">
               Register

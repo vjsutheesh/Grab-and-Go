@@ -10,8 +10,7 @@
 @import "react-toastify/dist/ReactToastify.css";
 @import "./components/Homepage/ProductList.css";
 @import "./components/MyCart/MyCart.css";
-
-/* @import "react-toastify/dist/ReactToastify.css"; */
+@import "react-toastify/dist/ReactToastify.css";
 
 body {
   margin: 0;

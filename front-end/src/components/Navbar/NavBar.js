@@ -14,7 +14,7 @@ const NavBar = () => {
     <>
       <div className="header-home">
         <div className="image-logo">
-          <Link to="/" className="logo-link">
+          <Link to="/home" className="logo-link">
             <img src={Grab} alt="Loading...." />
           </Link>
         </div>
@@ -42,7 +42,7 @@ const NavBar = () => {
               <a href="/mycart" className="mycart-icon">
                 <CgShoppingCart />
               </a>
-              <a href="/mycart" className="mycart-name">
+              <a href="/mycart/:hotelName" className="mycart-name">
                 My Cart
               </a>
             </div>
@@ -54,7 +54,7 @@ const NavBar = () => {
               >
                 {sessionStorage.getItem("username")}
               </a>
-              <a href="/">
+              <a href="/home">
                 <VscAccount className="header-profile-image" />
               </a>
             </div>
