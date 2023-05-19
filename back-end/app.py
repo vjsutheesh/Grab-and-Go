@@ -9,6 +9,8 @@ feedback_data = []
 select_item=[]
 selected_Item = []
 details =[]
+delivery=[]
+delivery_item =[]
 
 @app.route('/getdata', methods=["GET", "POST"])
 def get_data():
@@ -117,3 +119,18 @@ def post_Admin():
 @app.route('/getadmin',methods=['GET'])
 def get_Admin():
     return details
+@app.route('/inadmin',methods=['POST'])
+def in_delivery():
+    get_item = request.get_json()
+    delivery.clear()
+    delivery_item.clear()
+    delivery.append(get_item)
+    return delivery
+@app.route('/outadmin',methods=['GET'])
+def out_delivery():
+    delivery_item.clear()
+    for i in delivery:
+        delivery_item.append(i)
+    print(delivery_item)
+    return delivery_item
+

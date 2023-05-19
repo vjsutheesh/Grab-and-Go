@@ -3,6 +3,7 @@ import BasicSlider from "./BasicSlider.js";
 import Cards from "./Cards.js";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Footer from "../Footer/footer.js";
 const Home = () => {
   const history = useHistory();
 
@@ -33,10 +34,16 @@ const Home = () => {
             hotels throughour Grab & Go platform.We ease your work and save your
             time.{" "}
           </p>
-          <div className="wrapper">
+          <section id="cards"> 
+          <div className="wrapper" >
             <Cards></Cards>
           </div>
+          </section>
+          
         </div>
+        {/* <div>
+          <Footer/>
+        </div> */}
       </div>
     </>
   );

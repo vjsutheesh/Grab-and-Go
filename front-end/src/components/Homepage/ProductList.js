@@ -15,10 +15,8 @@ const ProductList = () => {
     const handleDecrement = (quantity, dishname) => {
         Menu_List.forEach(menu => {
             if (menu.DishName === dishname) {
-                console.log(dishname)
                 if (quantity > 0) {
                     setQuantity(menu.quantity--)
-                    console.log(quantity)
                 }
             }
         });
@@ -26,9 +24,7 @@ const ProductList = () => {
     const handleIncrement = (quantity, dishname) => {
         Menu_List.forEach(menu => {
             if (menu.DishName === dishname) {
-                console.log(dishname)
                 setQuantity(menu.quantity++)
-                console.log(quantity)
             }
         });
     }
@@ -52,18 +48,15 @@ const ProductList = () => {
 
     console.log("welcome to " + hotelName)
     useEffect(() => {
-        console.log(hotelName)
         fetch('http://127.0.0.1:5000/MenuList/' + hotelName)
             .then((res) => {
                 if (!res.ok) { // error coming back from server
                     throw Error('Unable to get the resource');
                 }
-                console.log(res)
                 return res.json();
             }
             )
             .then((data) => {
-                console.log(data)
                 setMenu_List(data)
                 setError(null)
             })
@@ -78,7 +71,6 @@ const ProductList = () => {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
                 setHotel_desc(data);
             })
             .catch((err) => {

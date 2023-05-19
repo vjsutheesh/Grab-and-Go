@@ -11,7 +11,8 @@
 @import "./components/Homepage/ProductList.css";
 @import "./components/MyCart/MyCart.css";
 @import "react-toastify/dist/ReactToastify.css";
-
+@import "./components/Adminpage/Admin.css";
+@import "./components/Footer/footer.css";
 body {
   margin: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",

@@ -25,6 +25,11 @@ const Login = () => {
                 if (userData["password"] === password) {
                   flag = false;
                   sessionStorage.setItem("username", inputName);
+                  toast.success("Login Successfully", {
+                    autoClose: 1000,
+                    closeButton: false,
+                    hideProgressBar: true,
+                  })
                   history.push("/home");
                 }
               }
