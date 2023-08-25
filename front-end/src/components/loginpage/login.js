@@ -1,7 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
 import { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const history = useHistory();
@@ -13,8 +13,9 @@ const Login = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      fetch("http://127.0.0.1:5000/data")
+      fetch("http://127.0.0.1:5000/getdata")
         .then((res) => {
+          console.log(res);
           return res.json();
         })
         .then((resp) => {
@@ -25,11 +26,12 @@ const Login = () => {
                 if (userData["password"] === password) {
                   flag = false;
                   sessionStorage.setItem("username", inputName);
+                  sessionStorage.setItem("current_user", userData['email'])
                   toast.success("Login Successfully", {
                     autoClose: 1000,
                     closeButton: false,
                     hideProgressBar: true,
-                  })
+                  });
                   history.push("/home");
                 }
               }
@@ -124,9 +126,9 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <i
-                  // class="fa fa-eye eye-icon"
-                  className="eye-icon"
+                  class="fa fa-eye eye-icon"
                   type="button"
+                  style={{cursor:"pointer"}}
                   onClick={showPassword}
                 ></i>
               </div>

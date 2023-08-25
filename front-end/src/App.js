@@ -11,6 +11,7 @@ import DropDownProfile from "./components/Navbar/DropDownProfile";
 import AboutUs from "./components/loginpage/AboutUs";
 import ContactUs from "./components/loginpage/ContactUs";
 import Admin from "./components/Adminpage/Admin";
+import OrderHistory from "./components/Navbar/order_history";
 function App() {
   return (
     <>
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/aboutus">
               <AboutUs />
+            </Route>
+            <Route path="/history">
+              <OrderHistory />
             </Route>
             <Route path="/contactus">
               <ContactUs />

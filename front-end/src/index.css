@@ -7,6 +7,7 @@
 @import "./components/loginpage/ContactUs.css";
 @import "./components/Homepage/ProductList.css";
 @import "./components/MyCart/MyCart.css";
+@import "./components/Navbar/order_history.css";
 @import "react-toastify/dist/ReactToastify.css";
 @import "./components/Homepage/ProductList.css";
 @import "./components/MyCart/MyCart.css";

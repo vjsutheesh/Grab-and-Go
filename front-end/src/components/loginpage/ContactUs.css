@@ -11,7 +11,7 @@
   background-size: cover;
   display: flex;
   color: white;
-  height: 679px;
+  height: 100vh;
 }
 
 .contactus-header {
@@ -22,6 +22,7 @@
 .contact-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   /* width: 50%; */
 }
 

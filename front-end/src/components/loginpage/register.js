@@ -10,6 +10,8 @@ const Register = () => {
 
   const history = useHistory();
 
+  const [data, setData] = useState("");
+
   const IsValidate = () => {
     let isproceed = true;
     let errormessage = "";
@@ -85,13 +87,14 @@ const Register = () => {
     return checkData;
   };
 
+
   const HandleSubmit = (e) => {
     e.preventDefault();
-    let regobj = { userName, email, password };
+    let regobj = { userName, email, password, order_history:[] };
     console.log(regobj);
 
     if (IsValidate() && dataAlreadyExists()) {
-      fetch("http://127.0.0.1:5000/getdata", {
+      fetch("http://127.0.0.1:5000/postdata", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(regobj),
@@ -113,23 +116,20 @@ const Register = () => {
         });
     }
   };
-  useEffect(() => {}, []);
 
-  const [data, setData] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/data")
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("could not fetch the data");
-        }
-        return res.json();
+    fetch("http://127.0.0.1:5000/getdata")
+      .then((response) => {
+        console.log(response); // Log the response to see its contents
+        return response.json();
       })
       .then((data) => {
         setData(data);
+        console.log(data);
       })
       .catch((err) => {
-        toast.error("Register page not working.", {
+        toast.error("Failed to fetch data. Please try again.", {
           autoClose: 3000,
           closeButton: false,
           hideProgressBar: true,

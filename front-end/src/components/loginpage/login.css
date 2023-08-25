@@ -2,12 +2,13 @@
   background-color: rgb(57, 51, 51);
   background-image: url("restarant.jpg");
   background-size: cover;
+  height: 100vh;
 }
 
 .navbar {
   display: flex;
   font-weight: bold;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .left-side {
@@ -144,4 +145,107 @@
   margin-top: -60px;
   margin-left: 483px;
   color: black;
+}
+
+
+/* Base styles for larger screens */
+/* ... (your existing CSS) ... */
+
+/* Media query for tablets (landscape) */
+@media (max-width: 1024px) {
+  .container {
+    background-size: auto;
+  }
+
+  .body {
+    margin-top: 80px;
+  }
+
+  .body-container {
+    width: 80%;
+    max-width: 480px;
+  }
+
+  .username,
+  .email,
+  .password {
+    margin-bottom: 20px;
+    font-size: 14px;
+    height: 36px;
+  }
+
+  .submit-btn {
+    width: 40%;
+    height: 36px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .eye-icon {
+    margin-top: -54px;
+    margin-left: 448px;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    background-size: cover;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .left-side {
+    margin-right: 0;
+  }
+
+  .right-side {
+    margin: 10px 0;
+    justify-content: center;
+  }
+
+  .about {
+    margin: 0;
+  }
+
+  .body {
+    margin-top: 60px;
+  }
+
+  .body-container {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  .username,
+  .email,
+  .password {
+    margin-bottom: 15px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    width: 50%;
+    height: 32px;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .account {
+    font-size: 12px;
+  }
+
+  .new-register {
+    font-size: 12px;
+  }
+
+  .eye-icon {
+    margin-top: -46px;
+    margin-left: 328px;
+  }
 }

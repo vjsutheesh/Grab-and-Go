@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\vjsut\Desktop\Mini Project\Grab-and-Go\back-end\venv"
+VIRTUAL_ENV="D:\react_back_up_files\Grab and Go\back-end\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

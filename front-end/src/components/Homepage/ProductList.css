@@ -1,5 +1,6 @@
 .product-page{
     background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365");
+    background-size: contain;
 }
 .hotel-desc{
     /* padding-left: 30px; */

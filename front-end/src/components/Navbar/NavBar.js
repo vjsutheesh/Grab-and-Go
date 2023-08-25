@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Grab from "./Grab.png";
 // import { useState,useEffect } from "react";
 import { MdWhereToVote, MdSearch } from "react-icons/md";
@@ -9,6 +9,32 @@ import DropDownProfile from "./DropDownProfile";
 import { useEffect, useState } from "react";
 const NavBar = () => {
   const [openProfile, setOpenprofile] = useState(false);
+  const [hotels, setHotels] = useState([]);
+  const [filterdata, setFilterdata] = useState([]);
+  const [isSearchFocused, setSearchFocused] = useState(false);
+  const handleFilter = (value) => {
+    const filteredData = hotels.filter((hotel) => {
+      return hotel.hotelName.toLowerCase().includes(value.toLowerCase());
+    });
+    setFilterdata(filteredData);
+  };
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/hotel_data")
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((data) => {
+        setHotels(data);
+        console.log(hotels);
+        setFilterdata(data);
+        console.log(filterdata);
+      })
+  },[]); 
+  const history = useHistory();
+  const HandleClick = (hotelName) => {
+    console.log(hotelName);
+    history.push("/ProductList/" + hotelName);
+  };
 
   return (
     <>
@@ -29,17 +55,42 @@ const NavBar = () => {
             </div>
             <div className="seperator"></div>
             <div className="search-bar">
-              <MdSearch className="search-icon" />
-              <input
-                type="text"
-                className="search-text"
-                placeholder="Search for a restaurant"
-              />
+              <div className="search-first">
+                <MdSearch className="search-icon" />
+                <input
+                  type="text"
+                  className="search-text"
+                  placeholder="Search for a restaurant"
+                  onChange={e => handleFilter(e.target.value)}
+                  onFocus={() => setSearchFocused(true)}
+                  onBlur={() => setSearchFocused(false)}
+                />
+              </div>
+              {isSearchFocused && (
+                <>
+                  {filterdata.length > 0 && (
+                    <div className="search-list">
+                      {filterdata.map((hotel, index) => (
+                        <a
+                          onMouseDown={() => HandleClick(hotel.hotelName)}
+                          className="result-item"
+                          key={index}
+                        >
+                          {hotel.hotelName}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {filterdata.length === 0 && (
+                    <div className="no-results">No matching results found</div>
+                  )}
+                </>
+              )}
             </div>
           </div>
           <div className="profile-wrapper">
             <div className="cart-bar">
-              <a href="/mycart" className="mycart-icon">
+              <a  className="mycart-icon">
                 <CgShoppingCart />
               </a>
               <a href="/mycart/:hotelName" className="mycart-name">
@@ -54,9 +105,9 @@ const NavBar = () => {
               >
                 {sessionStorage.getItem("username")}
               </a>
-              <a href="/home">
+              <p>
                 <VscAccount className="header-profile-image" />
-              </a>
+              </p>
             </div>
           </div>
         </div>

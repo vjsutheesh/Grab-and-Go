@@ -1,8 +1,9 @@
 .body-content{
     width: inherit;
     height: 600px;
-    padding: 0 30px;
+    padding: 20px 30px;
 }
+
 .body-text{
     /* height: 200px; */
     padding: 0 30px;
@@ -12,15 +13,26 @@
     flex-direction: column;
     align-items: center;
     background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365");
+    background-size: cover;
     
 }
 .basic-slider{
     border-radius: 10px;
 }
+
+.body-text-heading {
+    color: white;
+}
 .body-text-content{
     font-size: 24px;
+    color: white;
     width: 70%;
 }
+
+.body-text {
+    margin-top: 150px;
+}
+
 .wrapper{
     max-width: 100%;
     padding-bottom: 20px;
@@ -34,8 +46,8 @@
 }
 .homepage{
     background-color:rgb(59, 56, 56);
-    /* background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365"); */
-    /* background-size: cover; */
+    background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365");
+    background-size: cover;
 }
 .body-first{
     background-image: url("https://cdn.shopify.com/s/files/1/0521/6894/9958/files/Depositphotos_1400x.jpg?v=1608268365");

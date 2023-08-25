@@ -6,9 +6,18 @@
     text-decoration: none; 
     border-radius: 20px;
     border: none;
+    padding: 0px;
 }
 .button-click:hover{
     cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 8px 8px rgb(194, 186, 186);
+}
+
+.image-11 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* border-radius: 20px; */
 }
 .rating{
     background-color:rgb(36, 150,63 ) ;
