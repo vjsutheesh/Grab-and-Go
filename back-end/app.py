@@ -66,8 +66,8 @@ def get_feedback():
 
         smtp_server = 'smtp.gmail.com'
         smtp_port = 587
-        sender_email = 'kanishsk43@gmail.com'
-        sender_password = 'xnamtykabriusfkw'
+        sender_email = (os.getenv('EMAIL'))
+        sender_password = (os.getenv('PASSWORD'))
         recipient_email = 'kanishsk43@gmail.com'
         subject = f'Feedback from {data["name"]}'
         message = f'Emial : {data["email"]} \n Address : {data["address"]} \n Message : {data["message"]}'
